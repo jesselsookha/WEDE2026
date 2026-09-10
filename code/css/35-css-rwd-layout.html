@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container { 
+            width: 100%;        /* full width of the viewport */ 
+            max-width: 1200px;  /* prevents stretching too wide */ 
+            margin: 0 auto; 
+            padding: 20px;
+        }
+        .column {
+            float: left; 
+            width: 50%;         /* 2 columns side-by-side */ 
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column" style="background-color: aqua;">Left Column</div>
+        <div class="column" style="background-color: seagreen;">Right Column</div>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+    fluid grids - layouts that use percentages instead of fixed pixels 
+    flexible media - images (& videos) that scale with their containers 
+    media queries - CSS rules that activate based on the screen size 
+
+    2 thoughts on direction 
+    1: desktop > tablet > mobile phone 
+    2: mobile phone > tablet > desktop
+-->
