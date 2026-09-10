@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            height: 300px;
+            border: 1px solid #333; 
+        }
+
+        .static-box {
+            position: static;
+            /* float: right; */
+        }
+
+        .relative-box {
+            position: relative; 
+            left: 20px; 
+            top: 10px;
+            background-color: #ddd;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 100px;
+            left: 100px; 
+            background-color: #aaa;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="static-box">Static Box</div>
+        <div class="relative-box">Relative Box</div>
+        <div class="absolute-box">Absolute Box (inside container)</div>
+    </div>
+</body>
+</html>
+
+<!--
+    position: ?
+
+    static - default flow - no positioning
+    relative - moves element relative to its normal position 
+    absolute - positions the element relative to the nearest positioned ancestor 
+    fixed - positions element relative to the viewport 
+
+-->

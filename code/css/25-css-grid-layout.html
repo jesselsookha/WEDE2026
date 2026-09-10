@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {  
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 5px 5px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "header header header header header"
+                "content content content content side"
+                "footer footer footer footer footer";
+        }
+
+        .header { grid-area: header; }
+
+        .footer { grid-area: footer; }
+
+        .content { grid-area: content; }
+
+        .side { grid-area: side; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Name</h1>
+            <nav>
+
+            </nav>
+        </header>
+        <main class="content">
+            <article>
+                <section>
+                    <p>Section in the Article in Main</p>
+                </section>
+            </article>
+            <section>
+                <p>Section in the Main</p>
+            </section>
+        </main>
+        <aside class="side"><p>This is Side</p></aside>
+        <footer class="footer"><h2>Footer</h2></footer>
+    </div>
+</body>
+</html>
+
+<!-- 
+https://grid.layoutit.com/
+-->

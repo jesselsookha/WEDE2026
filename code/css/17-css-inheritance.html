@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif; /* inherited by child elements */
+            color: #444; /* inherited by paragraphs and the spans */
+            margin: 40px; /* not inherited */
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a piece of text using the font-family</p>
+    <p>
+        This is a piece of text is using the font-family from the
+        <code>&lt;body&gt;</code> element and gets the <span>blue</span> text 
+        from the &lt;span&gt; tag css that overrides with blue text.
+    </p>
+</body>
+</html>
+
+<!-- 
+    inherited properties 
+    font-family
+    color 
+    line-height
+    text-align
+
+    non-inherited properties 
+    margin 
+    padding
+    border 
+    width 
+    height 
+    background-color 
+-->

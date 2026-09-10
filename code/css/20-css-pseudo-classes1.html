@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-menu li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .main-menu a:hover {
+            color: crimson;
+            text-decoration: underline;
+        }
+        .main-menu li:first-child a {
+            font-weight: bold;
+        }
+        .main-menu li:nth-child(even) a {
+            background-color: #75a806;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="main-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+
+<!-- 
+CSS Example:
+
+/* Low specificity — type selector */
+p {
+  color: blue;
+}
+
+/* Medium specificity — class selector */
+.warning {
+  color: red;
+}
+
+/* High specificity — ID selector */
+#urgent {
+  color: orange;
+}
+HTML:
+
+<p>This is normal.</p>
+<p class="warning">This is a warning.</p>
+<p id="urgent" class="warning">This is urgent.</p>
+
+ID overrides class - last paragraph is going to be orange 
+-->

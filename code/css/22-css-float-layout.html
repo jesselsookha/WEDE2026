@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .floatbox {
+        display: block;
+        box-sizing: border-box;
+        margin: 0px -11.5px;
+      }
+
+      .floatbox::after {
+        clear: both;
+        content: '';
+        display: block;
+      }
+
+      .item {
+        float: right;
+        box-sizing: border-box;
+        width: 33.33%;
+        margin-bottom: 35px;
+        padding: 0px 11.5px;
+      }
+
+      .item:nth-child(3n + 1) {
+        clear: both;
+      }
+
+      .content {
+        color: #242424;
+        background-color: #3dcf5b;
+        font-weight: 600;
+        text-align: center;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="floatbox">
+  <div class="item">
+    <div class="content">
+      <p>11111</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="content">
+      <p>22222</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="content">
+      <p>33333</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="content">
+      <p>44444</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<!-- https://css-generator.netlify.app/layout-float/-->
