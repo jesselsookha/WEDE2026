@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop Registration</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+
+    <h1>Workshop Registration</h1>
+
+    <form id="registrationForm">
+
+        <table border="0" cellpadding="4" cellspacing="0">
+
+            <tr>
+                <td><label for="studentName">Student Name:</label></td>
+                <td><input type="text" id="studentName"></td>
+            </tr>
+
+            <tr>
+                <td><label for="studentNumber">Student Number:</label></td>
+                <td><input type="text" id="studentNumber"></td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email"></td>
+            </tr>
+
+            <tr>
+                <td><label for="workshop">Workshop:</label></td>
+                <td>
+                    <select id="workshop">
+                        <option value="Web Development">Web Development</option>
+                        <option value="Database Design">Database Design</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Register</button></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <div id="response"></div>
+
+    <!-- External JavaScript file -->
+    <script src="code/process.js"></script>
+
+</body>
+</html>
