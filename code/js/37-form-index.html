@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 15px;
+            color: #000000;
+            background-color: #ffffff;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+
+        table {
+            margin: 0;
+        }
+
+        td {
+            padding: 4px 8px 4px 0;
+            vertical-align: middle;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 15px;
+            padding: 4px 6px;
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            width: 220px;
+        }
+
+        button {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 15px;
+            padding: 6px 14px;
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #eeeeee;
+        }
+
+        #response {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #000000;
+            min-height: 20px;
+            white-space: pre-wrap;
+        }
+
+        .error {
+            color: #800000;
+            font-weight: bold;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Order Form</h1>
+
+    <form id="orderForm">
+
+        <table border="0" cellpadding="4" cellspacing="0">
+
+            <tr>
+                <td><label for="customerName">Customer Name:</label></td>
+                <td><input type="text" id="customerName"></td>
+            </tr>
+
+            <tr>
+                <td><label for="product">Product:</label></td>
+                <td><input type="text" id="product"></td>
+            </tr>
+
+            <tr>
+                <td><label for="quantity">Quantity:</label></td>
+                <td><input type="number" id="quantity"></td>
+            </tr>
+
+            <tr>
+                <td><label for="price">Price:</label></td>
+                <td><input type="number" id="price"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Place Order</button></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        // ============================================
+        // STUDENTS WRITE ALL JAVASCRIPT HERE
+        // ============================================
+        // ============================================================
+        // Step 1 — Catch the form submission
+        // ============================================================
+        document.getElementById("orderForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            // ========================================================
+            // Step 2 — Read the values from the form
+            // ========================================================
+            let customerName = document.getElementById("customerName").value;
+            let product      = document.getElementById("product").value;
+            let quantity     = document.getElementById("quantity").value;
+            let price        = document.getElementById("price").value;
+
+
+            // ========================================================
+            // Step 4 — Validate the input
+            // (shown here before processing, as in the step order)
+            // ========================================================
+            let response = document.getElementById("response");
+
+            if (customerName === "" || product === "" || quantity === "" || price === "") {
+
+                response.innerHTML =
+                    "<span class='error'>Please fill in all fields before placing your order.</span>";
+
+                return;
+
+            }
+
+
+            // ========================================================
+            // Step 3 — Process the values (calculate the total)
+            // ========================================================
+            let total = Number(quantity) * Number(price);
+
+
+            // ========================================================
+            // Step 5 — Respond on the same webpage
+            // (Uncomment these lines to use Method 1 instead of Method 2)
+            // ========================================================
+            // response.textContent =
+            //     "Thank you, " + customerName + ".\n" +
+            //     "Your order for " + quantity + " x " + product + " has been received.\n" +
+            //     "Total: R" + total;
+
+
+            // ========================================================
+            // Step 6 — Respond on a new webpage (the invoice)
+            // ========================================================
+
+            // if downloaded - invoice.html becomes 38-form-invoice.html
+
+            let invoiceURL =
+                "invoice.html" +
+                "?customer=" + encodeURIComponent(customerName) +
+                "&product="  + encodeURIComponent(product) +
+                "&quantity=" + encodeURIComponent(quantity) +
+                "&price="    + encodeURIComponent(price) +
+                "&total="    + encodeURIComponent(total);
+
+            window.location.href = invoiceURL;
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 15px;
+            color: #000000;
+            background-color: #ffffff;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        td {
+            padding: 4px 14px 4px 0;
+        }
+
+        .label {
+            width: 180px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 20px 0;
+        }
+
+        .total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Invoice</h1>
+
+    <table border="0">
+        <tr>
+            <td class="label">Customer:</td>
+            <td><span id="customer"></span></td>
+        </tr>
+        <tr>
+            <td class="label">Product:</td>
+            <td><span id="product"></span></td>
+        </tr>
+        <tr>
+            <td class="label">Quantity:</td>
+            <td><span id="quantity"></span></td>
+        </tr>
+        <tr>
+            <td class="label">Price:</td>
+            <td>R<span id="price"></span></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2 class="total">Total: R<span id="total"></span></h2>
+
+    <script>
+        // ============================================
+        // STUDENTS WRITE ALL JAVASCRIPT HERE
+        // ============================================
+
+        // ============================================================
+        // Step 7 — Read the URL parameters on the invoice page
+        // ============================================================
+        let params = new URLSearchParams(window.location.search);
+
+        let customer = params.get("customer");
+        let product  = params.get("product");
+        let quantity = params.get("quantity");
+        let price    = params.get("price");
+        let total    = params.get("total");
+
+
+        // ============================================================
+        // Step 8 — Handle a missing customer name (graceful fallback)
+        // ============================================================
+        if (customer === null) {
+
+            document.getElementById("customer").innerHTML =
+                "<span class='error'>No customer information supplied.</span>";
+
+        } else {
+
+            document.getElementById("customer").textContent = customer;
+
+        }
+
+
+        // ============================================================
+        // Step 7 (continued) — Display the remaining values
+        // ============================================================
+        document.getElementById("product").textContent  = product;
+        document.getElementById("quantity").textContent = quantity;
+        document.getElementById("price").textContent    = price;
+        document.getElementById("total").textContent    = total;
+
+    </script>
+
+</body>
+</html>
