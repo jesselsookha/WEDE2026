@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Title — 50-60 chars, keyword near start, unique -->
+    <title>Custom Kitchens & Furniture in Cape Town | Hendricks Carpentry</title>
+
+    <!-- SEO: Meta description — 150-160 chars, user-focused -->
+    <meta name="description"
+          content="Hand-made fitted kitchens and custom furniture in Cape Town. Solid oak, pine and reclaimed timber. Request a quote from our workshop.">
+
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href="https://hendrickscarpentry.co.za/services.html">
+
+    <!-- SEO: Open Graph for social sharing -->
+    <meta property="og:title" content="Custom Kitchens & Furniture in Cape Town | Hendricks Carpentry">
+    <meta property="og:description" content="Hand-made fitted kitchens and custom furniture in Cape Town. Request a quote.">
+    <meta property="og:image" content="https://hendrickscarpentry.co.za/images/workshop.jpg">
+    <meta property="og:url" content="https://hendrickscarpentry.co.za/services.html">
+    <meta property="og:type" content="website">
+
+    <!-- SEO: Allow indexing -->
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style/styles2.css">
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- SEO: ONE H1 per page -->
+        <h1>Our Work</h1>
+
+        <p class="muted">
+            Click any project to view a larger image.
+            Use the filter buttons to narrow the list.
+        </p>
+
+        <!-- Filter bar — JS enhancement, content is in the HTML below -->
+        <div id="filterBar">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="tables">Tables</button>
+            <button class="filter-btn" data-category="kitchens">Kitchens</button>
+            <button class="filter-btn" data-category="cupboards">Cupboards</button>
+        </div>
+
+        <div class="gallery" id="gallery">
+
+            <!-- SEO: content in the HTML, not loaded by JS -->
+            <div class="gallery-item" data-category="tables">
+                <img src="images/table-oak.jpg"
+                     alt="Solid oak dining table, 2.1 metres, waxed finish">
+                <div class="title">Oak Dining Table</div>
+                <div class="category">Tables</div>
+                <a href="#table-oak">View larger</a>
+            </div>
+
+            <div class="gallery-item" data-category="kitchens">
+                <img src="images/kitchen-modern.jpg"
+                     alt="Modern fitted kitchen with soft-close drawers and solid oak worktop">
+                <div class="title">Modern Fitted Kitchen</div>
+                <div class="category">Kitchens</div>
+                <a href="#kitchen-modern">View larger</a>
+            </div>
+
+            <div class="gallery-item" data-category="cupboards">
+                <img src="images/cupboard-bedroom.jpg"
+                     alt="Built-in bedroom cupboards, ceiling height, solid pine">
+                <div class="title">Bedroom Cupboards</div>
+                <div class="category">Cupboards</div>
+                <a href="#cupboard-bedroom">View larger</a>
+            </div>
+
+            <div class="gallery-item" data-category="tables">
+                <img src="images/table-pine.jpg"
+                     alt="Pine coffee table with a waxed finish, 1.2 metres">
+                <div class="title">Pine Coffee Table</div>
+                <div class="category">Tables</div>
+                <a href="#table-pine">View larger</a>
+            </div>
+
+            <div class="gallery-item" data-category="kitchens">
+                <img src="images/kitchen-country.jpg"
+                     alt="Country-style painted timber kitchen with open shelving">
+                <div class="title">Country-Style Kitchen</div>
+                <div class="category">Kitchens</div>
+                <a href="#kitchen-country">View larger</a>
+            </div>
+
+            <div class="gallery-item" data-category="cupboards">
+                <img src="images/cupboard-office.jpg"
+                     alt="Office cupboards with adjustable shelving and solid pine doors">
+                <div class="title">Office Cupboards</div>
+                <div class="category">Cupboards</div>
+                <a href="#cupboard-office">View larger</a>
+            </div>
+
+        </div>
+
+        <!-- Internal link — descriptive anchor text -->
+        <p>
+            <a href="enquiry.html">Request a quote for your project</a>
+        </p>
+
+    </main>
+
+    <footer>
+        <p>Hendricks Carpentry — 14 Boundary Road, Retreat, Cape Town</p>
+        <p><a href="contact.html">Contact us</a></p>
+    </footer>
+
+    <script src="js/43-script.js"></script>
+
+</body>
+</html>
