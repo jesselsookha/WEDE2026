@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Development App</title>
+    <style>
+        /* ===== GENERAL ===== */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #222;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background-color: #222;
+            color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 4px 4px 4px 0;
+            border: none;
+            border-radius: 6px;
+            background-color: #0078d4;
+            color: white;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        /* ===== TASK LIST ===== */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 12px;
+            margin: 6px 0;
+            background-color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        body.dark li {
+            background-color: #333;
+        }
+
+        li.completed {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            padding: 40px;
+            background-color: lightgray;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card.active {
+            transform: scale(1.05);
+            background-color: steelblue;
+            color: white;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modalContent {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+            color: #222;
+        }
+
+        /* ===== TIMER ===== */
+        #timer {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+
+        /* ===== HIGHLIGHT ===== */
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Web Development App</h1>
+
+    <h2 id="welcomeMessage">Welcome!</h2>
+
+    <button id="welcomeButton">Say Hello</button>
+    <button id="detailsButton">Show Details</button>
+    <button id="themeButton">Toggle Dark Mode</button>
+
+    <div id="details" style="display: none;">
+        <p><strong>Name:</strong> Alex</p>
+        <p><strong>Course:</strong> Web Development</p>
+        <p><strong>Level:</strong> Beginner</p>
+    </div>
+
+    <hr>
+
+    <h2>My Tasks</h2>
+    <input type="text" id="taskInput" placeholder="Enter a new task...">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+    <p>Tasks completed: <span id="taskCount">0</span></p>
+
+    <hr>
+
+    <h2>Focus Timer</h2>
+    <p id="timer">30</p>
+    <button id="startTimer">Start</button>
+    <button id="resetTimer">Reset</button>
+
+    <hr>
+
+    <h2>Grade Checker</h2>
+    <input type="number" id="mark" placeholder="Enter mark (0–100)">
+    <button id="checkMark">Check Result</button>
+    <p id="result"></p>
+
+    <hr>
+
+    <h2>Hover Card</h2>
+    <div id="card" class="card">Move your mouse over me!</div>
+
+    <hr>
+
+    <h2>Modal Window</h2>
+    <button id="openModal">Open Information</button>
+    <div id="modal" class="modal">
+        <div class="modalContent">
+            <h2>Important Information</h2>
+            <p>This information was dynamically displayed using JavaScript.</p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Random Colour Generator</h2>
+    <button id="colourButton">Generate Colour</button>
+    <p id="colourCode"></p>
+
+    <script>
+        // ============================================================
+        // STATE VARIABLES (used by Step 6 and Step 7)
+        // ============================================================
+        let completedTasks = 0;
+        let time = 30;
+        let timerInterval = null;
+
+
+        // ============================================================
+        // Step 1 — Show / Hide Details
+        // Concept: user clicks → JS listens → JS changes the HTML.
+        // ============================================================
+        document.getElementById("detailsButton").addEventListener("click", function () {
+
+            let details = document.getElementById("details");
+
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+
+        });
+
+
+        // ============================================================
+        // Step 2 — Change Text Dynamically
+        // Concept: JS can replace the content of an element.
+        // ============================================================
+        document.getElementById("welcomeButton").addEventListener("click", function () {
+
+            document.getElementById("welcomeMessage").textContent =
+                "Hello! Welcome to JavaScript!";
+
+        });
+
+
+        // ============================================================
+        // Step 3 — Change CSS Using JavaScript (Dark Mode Toggle)
+        // Concept: JS adds/removes a CSS class. CSS controls appearance.
+        // ============================================================
+        document.getElementById("themeButton").addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+        });
+
+
+        // ============================================================
+        // Step 4 & 5 & 6 — Interactive Task List
+        //   Step 4: create a new <li> from user input.
+        //   Step 5: clicking the <li> toggles the "completed" class.
+        //   Step 6: a counter tracks how many tasks are completed.
+        // ============================================================
+        document.getElementById("addTask").addEventListener("click", function () {
+
+            let task = document.getElementById("taskInput").value;
+
+            if (task === "") return; // ignore empty input
+
+            // --- Step 4: create the new list item ---
+            let newTask = document.createElement("li");
+            newTask.textContent = task;
+            document.getElementById("taskList").appendChild(newTask);
+
+            // clear the input box
+            document.getElementById("taskInput").value = "";
+
+            // --- Step 5 & 6: make the new task clickable + update counter ---
+            newTask.addEventListener("click", function () {
+
+                newTask.classList.toggle("completed");
+
+                if (newTask.classList.contains("completed")) {
+                    completedTasks++;
+                } else {
+                    completedTasks--;
+                }
+
+                document.getElementById("taskCount").textContent = completedTasks;
+
+            });
+
+        });
+
+
+        // ============================================================
+        // Step 7 — Countdown Timer
+        // Concept: JS can run code over time, without any user click.
+        // ============================================================
+        document.getElementById("startTimer").addEventListener("click", function () {
+
+            if (timerInterval !== null) return; // prevent double-start
+
+            timerInterval = setInterval(function () {
+
+                time--;
+                document.getElementById("timer").textContent = time;
+
+                if (time === 0) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                    alert("Time's up!");
+                }
+
+            }, 1000);
+
+        });
+
+        document.getElementById("resetTimer").addEventListener("click", function () {
+
+            clearInterval(timerInterval);
+            timerInterval = null;
+            time = 30;
+            document.getElementById("timer").textContent = time;
+
+        });
+
+
+        // ============================================================
+        // Step 8 — Respond to the Mouse (Hover Card)
+        // Concept: JS listens for many kinds of events, not just clicks.
+        // ============================================================
+        let card = document.getElementById("card");
+
+        card.addEventListener("mouseenter", function () {
+            card.classList.add("active");
+        });
+
+        card.addEventListener("mouseleave", function () {
+            card.classList.remove("active");
+        });
+
+
+        // ============================================================
+        // Step 9 — Modal / Popup Window
+        // Concept: JS makes the decision to show or hide an overlay.
+        // ============================================================
+        document.getElementById("openModal").addEventListener("click", function () {
+            document.getElementById("modal").classList.add("show");
+        });
+
+        document.getElementById("closeModal").addEventListener("click", function () {
+            document.getElementById("modal").classList.remove("show");
+        });
+
+
+        // ============================================================
+        // Step 10 — Grade Checker (Decision Making)
+        // Concept: JS can make decisions based on user input.
+        // ============================================================
+        document.getElementById("checkMark").addEventListener("click", function () {
+
+            let mark = Number(document.getElementById("mark").value);
+            let result = document.getElementById("result");
+
+            if (mark >= 75) {
+                result.textContent = "Excellent!";
+            } else if (mark >= 50) {
+                result.textContent = "You passed.";
+            } else {
+                result.textContent = "You need to try again.";
+            }
+
+        });
+
+
+        // ============================================================
+        // Step 11 — Random Colour Generator
+        // Concept: JS can generate unpredictable results.
+        // ============================================================
+        document.getElementById("colourButton").addEventListener("click", function () {
+
+            let colour = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+            document.body.style.backgroundColor = colour;
+            document.getElementById("colourCode").textContent = colour;
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+<!-- 
+                 CSS
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+     APPEARANCE          ANIMATION
+        │                   │
+        └─────────┬─────────┘
+                  │
+                  ▼
+              WEBPAGE
+                  ▲
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+    JAVASCRIPT          USER EVENTS
+        │                   │
+        ├── Click           │
+        ├── Input           │
+        ├── Mouse           │
+        ├── Keyboard        │
+        ├── Timer           │
+        ├── Decision        │
+        ├── Calculation     │
+        └── API             │
+
+-->
