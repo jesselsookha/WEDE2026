@@ -112,20 +112,151 @@ Where checklists, templates, or guidance are provided, always cross-check agains
 
 ---
 
-## Useful Links
+## Recommended Reading & References
 
-- **GitHub Repository:** https://github.com/jesselsookha/WEDE2026
-- **MDN Web Docs:** https://developer.mozilla.org/
-- **W3Schools:** https://www.w3schools.com/
-- **W3C Validator:** https://validator.w3.org/
-- **Can I Use:** https://caniuse.com/
+The following sources were consulted in the development of these documents. They are recommended for further study.
+
+### Core References
+
+1. Mozilla Developer Network (2025). *MDN Web Docs*. Available at: https://developer.mozilla.org/ [Accessed 15 July 2026].
+
+2. W3Schools (2025). *W3Schools Online Web Tutorials*. Available at: https://www.w3schools.com/ [Accessed 15 July 2026].
+
+3. Google (2025). *Google Search Central — SEO Starter Guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide [Accessed 15 July 2026].
+
+4. W3C (2025). *World Wide Web Consortium (W3C) — HTML & CSS Standards*. Available at: https://www.w3.org/standards/webdesign/ [Accessed 15 July 2026].
+
+### Web Development & Design
+
+5. Duckett, J. (2014). *HTML and CSS: Design and Build Websites*. Indianapolis: Wiley.
+
+6. Duckett, J. (2014). *JavaScript and JQuery: Interactive Front-End Web Development*. Indianapolis: Wiley.
+
+7. Frain, B. (2022). *Responsive Web Design with HTML5 and CSS*. 4th ed. Birmingham: Packt Publishing.
+
+8. Robbins, J.N. (2018). *Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics*. 5th ed. Sebastopol: O'Reilly Media.
+
+### Accessibility
+
+9. WebAIM (2025). *Web Accessibility In Mind — Introduction to Web Accessibility*. Available at: https://webaim.org/ [Accessed 15 July 2026].
+
+10. W3C (2025). *Web Content Accessibility Guidelines (WCAG) 2.1*. Available at: https://www.w3.org/TR/WCAG21/ [Accessed 15 July 2026].
+
+### SEO & Analytics
+
+11. Google (2025). *Google Search Console Help*. Available at: https://support.google.com/webmasters/ [Accessed 15 July 2026].
+
+12. Google (2025). *Google Analytics Help*. Available at: https://support.google.com/analytics/ [Accessed 15 July 2026].
+
+### JavaScript
+
+13. Flanagan, D. (2020). *JavaScript: The Definitive Guide*. 7th ed. Sebastopol: O'Reilly Media.
+
+14. Simpson, K. (2020). *You Don't Know JS Yet*. Available at: https://github.com/getify/You-Dont-Know-JS [Accessed 15 July 2026].
+
+### Version Control & Deployment
+
+15. Chacon, S. and Straub, B. (2014). *Pro Git*. 2nd ed. New York: Apress. Available at: https://git-scm.com/book/en/v2 [Accessed 15 July 2026].
+
+16. GitHub (2025). *GitHub Pages Documentation*. Available at: https://docs.github.com/en/pages [Accessed 15 July 2026].
+
+### Additional Online Resources
+
+17. CSS-Tricks (2025). *A Complete Guide to Flexbox*. Available at: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ [Accessed 15 July 2026].
+
+18. CSS-Tricks (2025). *A Complete Guide to Grid*. Available at: https://css-tricks.com/snippets/css/complete-guide-grid/ [Accessed 15 July 2026].
+
+19. MDN (2025). *Learn JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Learn/JavaScript [Accessed 15 July 2026].
+
+20. Can I Use (2025). *Browser Support Tables*. Available at: https://caniuse.com/ [Accessed 15 July 2026].
+
+---
+
+## Quick Links to Key Resources
+
+### Documentation & Standards
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [W3C Standards](https://www.w3.org/standards/)
+- [HTML Specification](https://html.spec.whatwg.org/)
+- [CSS Specification](https://www.w3.org/Style/CSS/)
+
+### Tools & Validators
+- [W3C HTML Validator](https://validator.w3.org/)
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [Google PageSpeed Insights](https://pagespeed.web.dev/)
+- [Can I Use](https://caniuse.com/)
+
+### Analytics & SEO
+- [Google Analytics](https://analytics.google.com/)
+- [Google Search Console](https://search.google.com/search-console/)
+- [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+
+### Learning Platforms
+- [MDN Learn Web Development](https://developer.mozilla.org/en-US/docs/Learn)
+- [W3Schools](https://www.w3schools.com/)
+- [Codecademy](https://www.codecademy.com/)
+- [FreeCodeCamp](https://www.freecodecamp.org/)
+
+### Code & Deployment
+- [GitHub](https://github.com/)
+- [GitHub Pages](https://pages.github.com/)
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+
+---
+
+## Disclaimer
+
+**Important Notice for Students**
+
+These documents are **supplementary learning materials** developed to support the Introduction to Web Development course. They are not a substitute for:
+
+1. **The official Module Manual** — This document contains the formal learning outcomes, assessment criteria, and course requirements. You are responsible for reading and understanding it.
+
+2. **LMS content and activities** — Your Learning Management System (Arc) contains essential materials, including:
+   - Assignment briefs and submission guidelines
+   - Discussion forums and peer activities
+   - Quizzes and self-assessment tasks
+   - Announcements and updates
+
+3. **In-class instruction** — These notes are designed to complement, not replace, your instructor's explanations, demonstrations, and feedback.
+
+4. **Official assignment guidelines** — Always refer to the assignment brief on Arc for specific requirements, marking criteria, and submission instructions.
+
+**Code Examples and Academic Integrity**
+
+- The code examples provided in these documents are for **learning and reference purposes**.
+- Submitting code copied directly from these notes without understanding it may constitute **academic dishonesty**.
+- You are encouraged to use these examples as a **starting point** and to **build your own solutions**.
+
+**Errors and Updates**
+
+- While every effort has been made to ensure accuracy, these documents may contain errors.
+- If you find an error, please report it to your instructor.
+- Documents may be updated throughout the term — always use the latest version.
 
 ---
 
 ## Feedback
 
-If you notice an error, a broken link, or have a suggestion for how these notes and examples could be improved, please raise it with your lecturer.
+These documents are continually evolving. If you have suggestions for improvement, corrections, or additional topics you would like to see covered, please share your feedback with your instructor.
 
 ---
+
+## License
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit
+- **NonCommercial** — You may not use the material for commercial purposes
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license
+
+---
+
 
 *Happy coding — and remember: the best way to learn web development is to build.*
